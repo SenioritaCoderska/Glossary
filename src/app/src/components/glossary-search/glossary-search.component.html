@@ -1,0 +1,44 @@
+<p>glossary-search works!</p>
+<form #form="ngForm" autocomplete="off" (search)="onSearch(form)">
+        <input type="hidden" name="RecId" [value]="service.formSearch.RecId">
+
+        <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                                <i class="fas fa-search"[class.green-icon]="Acronym.valid" [class.red-icon]="Acronym.invalid && Acronym.touched"></i> 
+                        </div>
+                    </div>
+                    <input name="Acronym" #Acronym="ngModel" [(ngModel)]="service.formSearch.Acronym"  class="form-control" placeholder="Provide your acronym" maxlength="20" minlength="2" type="text" required>
+                    
+                    <button class="btn btn-success btn-group-lg" type="search" [disabled]="form.invalid">
+                            <i class="fas fa-search"></i>&nbsp;&nbsp;Search</button>  
+                </div> 
+            </div>
+                    
+                    <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                           Long name
+                                    </div>
+                                </div>
+                                    <textarea name="AcronymExtension" #AcronymExtension="ngModel" [(ngModel)]="service.formSearch.AcronymExtension"  class="form-control" placeholder=""  maxlength="200" minlength="2" type="text" readonly=true >
+                                            {{AcronymExtension}}
+                                    </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white">
+                                            Description
+                                        </div>
+                                    </div>
+                                        <textarea name="Description" #Description="ngModel" [(ngModel)]="service.formSearch.Description"  class="form-control" placeholder="" maxlength="255" minlength="2"  type="text" readonly=true>
+                                                {{Description}}
+                                        </textarea>
+                                </div>
+                            </div>
+
+</form>

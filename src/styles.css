@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+input.ng-touched.ng-invalid{
+    border-color: crimson;
+}
+
+input.ng-valid{
+    border-color: rgb(12, 145, 12);
+}
+
+.green-icon{
+    color: rgb(12, 145, 12);
+}
+
+.red-icon{
+    color: crimson}
+
+#toast-container> div {
+    opacity:1;
+}
+
+input.search {
+inline-size: 50%
+}
+table tr:hover{
+    cursor: pointer;
+    background-color:  rgb(12, 145, 12);
+    color: white;
+}
+
