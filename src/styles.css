@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 input.ng-touched.ng-invalid{
     border-color: crimson;
 }
@@ -15,16 +14,167 @@ input.ng-valid{
 .red-icon{
     color: crimson}
 
-#toast-container> div {
+#toast-container> div.info {
     opacity:1;
+    background-color:rgb(3, 165, 194);
+    color: white;
 }
+
+#toast-container> div.warrning {
+    opacity:1;
+    background-color: orange;
+    color: white;
+}
+
+#toast-container> div.success {
+    opacity:1;
+    background-color: green;
+    color: white;
+}
+
+#toast-container> div.reject {
+    opacity:1;
+    background-color: red;
+    color: white;
+}
+
+
 
 input.search {
 inline-size: 50%
 }
 table tr:hover{
     cursor: pointer;
-    background-color:  rgb(12, 145, 12);
-    color: white;
+    color:black;
+    opacity: 0.8;
+    background-color:rgb(128, 234, 253);
 }
 
+table.bg-custom{
+    cursor: pointer;
+    color:black;
+    background-color:white;
+}
+
+
+table th.bg-customHead{
+    border: 1%;
+    border-color: black;
+    border-style: solid;
+    background-color:black;
+    color:white;
+}
+table td i.reject:hover, .i.actions:focus, .i.actions:active, .i.actions.active, .open>.dropdown-toggle.i.actions{
+
+    color: red;
+ 
+
+}
+table td i.accept:hover, .i.actions:focus, .i.actions:active, .i.actions.active, .open>.dropdown-toggle.i.actions{
+
+    color: green;
+
+}
+
+
+img.img-src{
+float: left;
+width: 20%;
+height: auto;
+
+} 
+
+textarea.ng-touched.ng-invalid{
+    border-color: crimson;
+}
+
+textarea.ng-valid{
+    border-color: rgb(12, 145, 12);
+}
+
+textarea.dimension{
+    min-height:100px;
+}
+
+p.transparent{
+    opacity: 0;
+}
+
+.fontGothamBlackRegular{
+    font-family:'Gotham Black Regular';
+    font-weight:normal;
+}
+
+.jumbotron{
+    min-width: 90%;
+    min-height: 500px;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    background-color: rgb(235, 236, 236);
+    border-color: black;
+
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+    
+}
+
+.jumbotronHead{
+    min-width: 90%;
+    min-height: 100%;
+    padding-top: 0%;
+    padding-left: 0%;
+    padding-bottom: 0%;
+    padding-right: 0%;
+    background-color: rgb(7, 7, 7);
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+}
+
+
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active, .btn-menu.active, .open>.dropdown-toggle.btn-menu {
+    color:white;
+    background-color: rgb(3, 165, 194);
+    border-color: white; 
+    font-size: 90%;
+    outline-color: #fff;
+    /*set the color you want here*/
+}
+
+
+.btn-menu {
+    color:black;
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0); 
+    font-size: 90%;/*set the color you want here*/
+}
+
+.bg-dark{
+    background-color: black;
+}
+
+
+.btn-action:hover, .btn-action:focus, .btn-action:active, .btn-action.active, .open>.dropdown-toggle.btn-action {
+    color:white;
+    background-color: rgb(3, 165, 194);
+    border-color: white; 
+    font-size: 90%;
+    outline-color: #fff;
+    /*set the color you want here*/
+}
+
+
+.btn-action {
+    color:rgb(255, 255, 255);
+    background-color:black;
+    border-color: rgb(255, 255, 255); 
+    border-style: solid;
+    font-size: 90%;/*set the color you want here*/
+}

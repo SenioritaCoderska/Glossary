@@ -1,0 +1,21 @@
+<div class="jumbtron fontGothamBlackRegular" style="font-size: 80%">
+        <table class="table table-hover bg-custom">
+            <th class="bg-customHead">Acronym</th>
+            <th class="bg-customHead">Acronym Extension</th>
+            <th class="bg-customHead">Description</th>
+            <th class="bg-customHead">PostedBy</th>
+            <th class="bg-customHead">PostedOn</th>
+            <th class="bg-customHead">Approve</th>
+            <th class="bg-customHead">Reject</th>
+            <tr *ngFor="let dt of service.listApproval">    
+                <td class="bg-custom"> {{dt.Acronym}}   </td>
+                <td class="bg-custom" style="font-weight: bolder"> {{dt.AcronymExtension}}</td>
+                <td class="bg-custom"> {{dt.Description}}   </td>
+                <td class="bg-custom"> {{dt.PostedBy}}  </td>
+                <td class="bg-custom"> {{dt.PostedDate | date:'yyyy-MM-dd'}}  </td>
+                <td class="bg-custom"> <i class="fas fa-check-circle accept" (click)="onAccept(dt.RecId)"></i>  </td>
+                <td class="bg-custom"> <i class="fas fa-trash-alt reject" (click)="onReject(dt.RecId)"></i>  </td>
+
+            </tr>
+        </table>
+</div>

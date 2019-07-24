@@ -1,0 +1,64 @@
+
+<div *ngIf="!flagUpdate">
+<form #formS="ngForm" autocomplete="off" style="font-size: 90%" class="fontGothamBlackRegular">
+        <input type="hidden" name="RecId" [value]="serviceSearch.formSearch.RecId">
+        <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                                <i class="fas fa-search-plus" [class.green-icon]="Acronym.valid" [class.red-icon]="Acronym.invalid && Acronym.touched"></i> 
+                        </div>
+                    </div>
+                    <input name="Acronym" #Acronym="ngModel" [(ngModel)]="serviceSearch.formSearch.Acronym"  class="form-control fontGothamBlackRegular" placeholder="Find your acronym" maxlength="20" minlength="2" type="text" required>
+                    
+                    <button id="btnSearch" class="btn btn-action btn-sm fontGothamBlackRegular"  type="search" [disabled]="formS.invalid" (click)="onSearch(formS)">
+                        <i class="fas fa-search"></i>&nbsp;&nbsp;SEARCH</button>
+                </div> 
+            </div>
+            
+            <div *ngFor="let dt of serviceSearch.listSearch" >     
+                                        <!-- <div *ngIf="this.flagUpdate && (!formS.pristine && formS.submitted); updatePressed"> -->
+                                        <p style="font-weight: bolder">{{dt.AcronymExtension}}</p>
+                                        <p>{{dt.Description}}</p>
+
+      
+                                                <button #update class="btn btn-action btn-lg float-right fontGothamBlackRegular"  type="submit" [disabled]="formS.invalid" 
+                                                        (click)="populateValues(formS,true)">
+                                                        <i class="fas fa-paper-plane"></i> &nbsp;&nbsp;UPDATE</button>
+                                                </div>
+
+                <div  *ngIf="serviceSearch.listSearch.length === 0 && (!formS.pristine && formS.submitted)">
+                                <p>No records found</p>
+                </div>
+</form>
+</div>
+<div *ngIf="flagUpdate">
+    <form #formA="ngForm" autocomplete="off" style="font-size: 90%" class="fontGothamBlackRegular">
+        <input type="hidden" name="RecId" [value]="serviceSearch.formSearch.RecId">
+                <div *ngFor="let up of serviceSearch.listSearch" >    
+                    <p><strong>{{up.Acronym}}</strong></p>
+                    <p><strong>{{up.AcronymExtension}}</strong></p>
+                    <p>{{up.Description}}</p>
+                    <br>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fas fa-edit" [class.green-icon]="Description.valid" [class.red-icon]="Description.invalid && Description.touched"></i>
+                                </div>
+                            </div>
+                            <textarea type="text" name="Description" #Description="ngModel" [(ngModel)]="serviceSearch.formSearch.Description" class="form-control dimension fontGothamBlackRegular" 
+                            placeholder="Provide new definition" maxlength="1000" minlength="2" required></textarea>
+                
+                        </div>
+                                    <p></p>
+                                    <button class="btn btn-sm btn-action float-right fontGothamBlackRegular" type="submit"   
+                                            (click)="onAdd(formA, up.Acronym +'/'+ up.AcronymExtension +'/'+ serviceSearch.formSearch.Description)" >
+                                        <i class="fas fa-mail-bulk"></i> &nbsp;&nbsp;SEND FOR APPROVAL</button>
+                                </div>
+                </div>
+            </form>
+</div>
+
+
+
