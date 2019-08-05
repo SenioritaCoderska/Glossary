@@ -107,7 +107,8 @@ p.transparent{
 }
 
 .jumbotron{
-    min-width: 80%;
+    max-width: 90%;
+    min-width: 90%;
     min-height: 500px;
     padding-top: 1%;
     padding-left: 1%;
@@ -115,22 +116,32 @@ p.transparent{
     padding-right: 1%;
     background-color: rgb(235, 236, 236);
     border-color: black;
-    
 }
 
 .jumbotronHead{
-    min-width: 80%;
+    max-width: 90%;
+    min-width: 90%;
     min-height: 100%;
     padding-top: 0%;
     padding-left: 0%;
     padding-bottom: 0%;
     padding-right: 0%;
     background-color: rgb(7, 7, 7);
-
-
-
+    display: block
 }
 
+.buttonsRight { 
+    display: block; 
+    text-align: right; 
+    margin-block-end: -20%;  
+}
+
+btn { float: right; }
+
+.vertical-center {
+    display: block;
+
+  }
 
 .btn-menu:hover, .btn-menu:focus, .btn-menu:active, .btn-menu.active, .open>.dropdown-toggle.btn-menu {
     color:white;
@@ -138,7 +149,7 @@ p.transparent{
     border-color: white; 
     font-size: 90%;
     outline-color: #fff;
-    /*set the color you want here*/
+
 }
 
 
@@ -146,7 +157,7 @@ p.transparent{
     color:black;
     background-color:rgb(255, 255, 255);
     border-color: rgb(0, 0, 0); 
-    font-size: 90%;/*set the color you want here*/
+    font-size: 90%;
 }
 
 .bg-dark{
@@ -160,7 +171,7 @@ p.transparent{
     border-color: white; 
     font-size: 90%;
     outline-color: #fff;
-    /*set the color you want here*/
+
 }
 
 
@@ -169,5 +180,5 @@ p.transparent{
     background-color:black;
     border-color: rgb(255, 255, 255); 
     border-style: solid;
-    font-size: 90%;/*set the color you want here*/
+    font-size: 90%;
 }

@@ -1,60 +1,32 @@
-<div class="container">
-</div>
+
 
 <header>
-  <h1 class="uk-display-block text-center fontGothamBlackRegular">  
+    <div class="container vertical-center">
+
+  <h1 class="uk-display-block text-center fontGothamBlackRegular vertical-center">  
                           <img class="img-src"  src="assets/img/clariant-logo.jpg">
                           <p class="display-4"><strong>GLOSSARY</strong></p>
 
                   </h1>
+                </div>
 </header>
 <hr>
-<div class="jumbotronHead">
-  <div class="row small">
-      <div class="col-sm-3">
-          <nav class="nav  justify-content-start">
-              <em></em>
-              <div class="btn-toolbar justify-content-start" role="toolbar" aria-label="Toolbar with button groups">
+<div class="container jumbotronHead vertical-center">
+          <nav class="nav">
+            <div class="btn-group m-1 col-sm" role="group" aria-label="First group">
+                <a routerLink="/home"  routerLinkActive="a-"><button #btnSearch class="btn btn-sm  btn-menu fontGothamBlackRegular"><i class="fas fa-home">&nbsp;&nbsp;</i> HOME</button></a></div>
+                <div class="btn-group m-1 col-sm buttonsRight" role="group" aria-label="Second group">
+              <a routerLink="/search" routerLinkActive="active"> <button class="btn btn-sm btn-menu fontGothamBlackRegular" ><i class="fas fa-search">&nbsp;&nbsp;</i> SEARCH</button></a>
+              <a routerLink="/add" routerLinkActive="active"><button class="btn btn-sm btn-menu fontGothamBlackRegular" ><i class="fas fa-plus-square">&nbsp;&nbsp;</i> ADD NEW</button></a>
+              <a routerLink="/approval" routerLinkActive="active"> <button class="btn btn-sm btn-menu fontGothamBlackRegular" ><i class="fas fa-tasks">&nbsp;&nbsp;</i>CHECK APPROVAL LIST</button></a></div>
 
-                  <div class="btn-group m-1 " role="group" aria-label="First group">
-                    <a routerLink="/home"  routerLinkActive="a-"><button #btnSearch class="btn btn-sm  btn-menu fontGothamBlackRegular"><i class="fas fa-home">&nbsp;&nbsp;</i> HOME</button></a>
-                  </div>
-
-              </div>
-
-          </nav>
+            </nav>
       </div>
-      <div class="col-sm-9 ">
-          <nav class="nav  justify-content-end">
-
-              <div class="btn-toolbar justify-content-end" role="toolbar" aria-label="Toolbar with button groups">
-
-                  <div class="btn-group m-1" role="group" aria-label="First group">
-                    <a routerLink="/search" routerLinkActive="active"> <button class="btn btn-sm btn-menu  fontGothamBlackRegular" ><i class="fas fa-search">&nbsp;&nbsp;</i> SEARCH</button></a>
-                  </div>
-                  <div class="btn-group m-1" role="group" aria-label="Second group">
-                    <a routerLink="/add" routerLinkActive="active"><button class="btn btn-sm btn-menu  fontGothamBlackRegular" ><i class="fas fa-plus-square">&nbsp;&nbsp;</i> ADD NEW</button></a>
-                  </div>
-                  <div class="btn-group m-1 " role="group" aria-label="Third group">
-                    <a routerLink="/approval" routerLinkActive="active"> <button class="btn btn-sm btn-menu  fontGothamBlackRegular" ><i class="fas fa-tasks">&nbsp;&nbsp;</i>CHECK APPROVAL LIST</button></a>
-                  </div>
-
-              </div>
-
-          </nav>
-      </div>
-
-  </div>
-
-</div>
-<div class="jumbotron">
+<div class="container jumbotron vertical-center">
 <router-outlet></router-outlet>
-
-
 </div>
-<footer class="">
+<footer class="container vertical-center">
   <div>
-      <p>@Copyright by CLARIANT</p>
-      <p>In case of any issue please contact: <a href="mailto:dti_ea@clariant.com">dti_ea@clariant.com</a></p>
+      <p>@Copyright by CLARIANT || In case of any issue please contact: <a href="mailto:dti_ea@clariant.com">dti_ea@clariant.com</a></p>
   </div>
 </footer>
