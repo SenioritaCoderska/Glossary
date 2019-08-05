@@ -1,3 +1,4 @@
+<div *ngIf="!flagSubmitted">
 <form class="justify-content-around" #formU="ngForm" autocomplete="off">
         <input type="hidden" name="RecId" [value]="serviceAdd.formApproval.RecId">
     
@@ -5,7 +6,7 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-white">
-                        <i class="fas fa-edit" [class.green-icon]="Acronym.valid" [class.red-icon]="Acronym.invalid && Acronym.touched"></i>
+                        <i class="fas fa-pen-square" [class.green-icon]="Acronym.valid" [class.red-icon]="Acronym.invalid && Acronym.touched"></i>
                     </div>
                 </div>
                 <input name="Acronym" #Acronym="ngModel" [(ngModel)]="serviceAdd.formApproval.Acronym" class="form-control fontGothamBlackRegular" style="font-size: 100%" placeholder="Provide acronym" value="data.Acronym" maxlength="10" minlength="2" type="text" required>
@@ -16,7 +17,7 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-white">
-                        <i class="fas fa-edit" [class.green-icon]="AcronymExtension.valid" [class.red-icon]="AcronymExtension.invalid && AcronymExtension.touched"></i>
+                        <i class="fas fa-pen-square" [class.green-icon]="AcronymExtension.valid" [class.red-icon]="AcronymExtension.invalid && AcronymExtension.touched"></i>
                     </div>
                 </div>
                 <input name="AcronymExtension" #AcronymExtension="ngModel" [(ngModel)]="serviceAdd.formApproval.AcronymExtension" class="form-control fontGothamBlackRegular" style="font-size: 100%" placeholder="Provide acronym extension" maxlength="200" minlength="2" type="text" required>
@@ -27,22 +28,24 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-white">
-                        <i class="fas fa-edit" [class.green-icon]="Description.valid" [class.red-icon]="Description.invalid && Description.touched"></i>
+                        <i class="fas fa-pen-square" [class.green-icon]="Description.valid" [class.red-icon]="Description.invalid && Description.touched"></i>
                     </div>
                 </div>
-                <textarea type="text" name="Description" #Description="ngModel" [(ngModel)]="serviceAdd.formApproval.Description" class="form-control dimension fontGothamBlackRegular" placeholder="Provide description" maxlength="255" minlength="2" required></textarea>
+                <textarea type="text" name="Description" #Description="ngModel" [(ngModel)]="serviceAdd.formApproval.Description" class="form-control dimension fontGothamBlackRegular" placeholder="Provide description (maximum 1000 signs)" maxlength="1000" minlength="2" required></textarea>
     
-            </div>
-            <p></p>
-            <button class="btn btn-sm btn-action float-right fontGothamBlackRegular" type="submit" [disabled]="formU.invalid" (submit)="onSubmit(formU)">
-                <i class="fas fa-mail-bulk"></i> &nbsp;&nbsp;SEND FOR APPROVAL</button>
-    
+            </div>   
             <input type="hidden" name="PostedBy" #PostedBy="ngModel" [(ngModel)]="serviceAdd.formApproval.PostedBy" class="form-control">
             <input type="hidden" name="FlagApproved" #FlagApproved="ngModel" [(ngModel)]="serviceAdd.formApproval.FlagApproved" class="form-control">
             <input type="hidden" name="FlagRejected" #FlagRejected="ngModel" [(ngModel)]="serviceAdd.formApproval.FlagRejected" class="form-control">
             <input type="hidden" name="ApprovedBy" #ApprovedBy="ngModel" [(ngModel)]="serviceAdd.formApproval.ApprovedBy" class="form-control">
-           
+            <p></p>
+            <button class="btn btn-sm btn-action float-right fontGothamBlackRegular" type="submit" [disabled]="formU.invalid" (click)="onSubmit(formU)">
+                <i class="fas fa-mail-bulk"></i> &nbsp;&nbsp;SEND FOR APPROVAL</button>
     
         </div>
     
     </form>
+</div>
+<div *ngIf="flagSubmitted">
+    <app-glossary-welcome></app-glossary-welcome>
+</div>

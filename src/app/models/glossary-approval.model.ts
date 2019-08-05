@@ -6,8 +6,7 @@ export interface GlossaryApproval {
          Acronym: string;
          AcronymExtension: string;
          Description: string;
-         PostedBy: string;    
-         PostedDate: any;     
+         PostedBy: string;      
          FlagApproved: string;
          FlagRejected: string;
          ApprovedBy: string;   

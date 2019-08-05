@@ -7,7 +7,7 @@ import { GlossarySearch } from '../models/glossary-search.model';
   providedIn: 'root'
 })
 export class GlossaryPermissionService {
-  readonly domain="https://localhost:44368/api";
+  readonly domain="https://localhost:5001/api";
     constructor(private http:HttpClient) { }
     
 

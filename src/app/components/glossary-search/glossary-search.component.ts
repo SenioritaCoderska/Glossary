@@ -19,6 +19,8 @@ public flagUpdate: boolean= false;
 public flagSendForApproval: boolean=false;
   ngOnInit() {
     this.resetForm();
+    this.flagUpdate= false;
+    this.flagSendForApproval=false;
   }
 
 
@@ -76,12 +78,13 @@ public flagSendForApproval: boolean=false;
     this.serviceApproval.postRecordFromUpdate(content).subscribe(
     res=>{
       this.resetForm(form);
-      this.toastr.success('Submitted Succesfully', 'Send for approval')
+      this.toastr.success('Record successfully submited! Awaiting approval!', 'Clariant Glossary Communication')
       this.flagSendForApproval=true;
     },
     err=>{
       console.log(err);
       this.flagSendForApproval=false;
+      this.toastr.error('Submission failed', 'Clariant Glossary Communication')
     });
   }
 }

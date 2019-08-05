@@ -14,13 +14,13 @@ input.ng-valid{
 .red-icon{
     color: crimson}
 
-#toast-container> div.info {
+#toast-container> div {
     opacity:1;
     background-color:rgb(3, 165, 194);
     color: white;
 }
 
-#toast-container> div.warrning {
+/* #toast-container> div.warrning {
     opacity:1;
     background-color: orange;
     color: white;
@@ -32,11 +32,12 @@ input.ng-valid{
     color: white;
 }
 
-#toast-container> div.reject {
+*/
+#toast-container> div.error {
     opacity:1;
     background-color: red;
     color: white;
-}
+} 
 
 
 
@@ -93,7 +94,7 @@ textarea.ng-valid{
 }
 
 textarea.dimension{
-    min-height:100px;
+    min-height:200px;
 }
 
 p.transparent{
@@ -106,7 +107,7 @@ p.transparent{
 }
 
 .jumbotron{
-    min-width: 90%;
+    min-width: 80%;
     min-height: 500px;
     padding-top: 1%;
     padding-left: 1%;
@@ -114,16 +115,11 @@ p.transparent{
     padding-right: 1%;
     background-color: rgb(235, 236, 236);
     border-color: black;
-
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
     
 }
 
 .jumbotronHead{
-    min-width: 90%;
+    min-width: 80%;
     min-height: 100%;
     padding-top: 0%;
     padding-left: 0%;
@@ -131,10 +127,7 @@ p.transparent{
     padding-right: 0%;
     background-color: rgb(7, 7, 7);
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+
 
 }
 

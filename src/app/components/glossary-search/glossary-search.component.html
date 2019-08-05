@@ -1,5 +1,5 @@
 
-<div *ngIf="!flagUpdate">
+<div *ngIf="!flagUpdate && !flagSendForApproval">
 <form #formS="ngForm" autocomplete="off" style="font-size: 90%" class="fontGothamBlackRegular">
         <input type="hidden" name="RecId" [value]="serviceSearch.formSearch.RecId">
         <div class="form-group">
@@ -32,7 +32,8 @@
                 </div>
 </form>
 </div>
-<div *ngIf="flagUpdate">
+
+<div *ngIf="flagUpdate && !flagSendForApproval">
     <form #formA="ngForm" autocomplete="off" style="font-size: 90%" class="fontGothamBlackRegular">
         <input type="hidden" name="RecId" [value]="serviceSearch.formSearch.RecId">
                 <div *ngFor="let up of serviceSearch.listSearch" >    
@@ -48,7 +49,7 @@
                                 </div>
                             </div>
                             <textarea type="text" name="Description" #Description="ngModel" [(ngModel)]="serviceSearch.formSearch.Description" class="form-control dimension fontGothamBlackRegular" 
-                            placeholder="Provide new definition" maxlength="1000" minlength="2" required></textarea>
+                            placeholder="Provide new definition (maximum 1000 signs)" maxlength="1000" minlength="2" required></textarea>
                 
                         </div>
                                     <p></p>
@@ -61,4 +62,6 @@
 </div>
 
 
-
+<div *ngIf="flagSendForApproval">
+    <app-glossary-welcome></app-glossary-welcome>
+</div>

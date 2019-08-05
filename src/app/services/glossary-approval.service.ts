@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { GlossaryApproval} from '../models/glossary-approval.model';
+import {GlossaryGetApprovalList} from "../models/glossary-get-approval-list.model"
 import { HttpClient } from '@angular/common/http';
-import { GlossaryUpdate } from '../models/glossary-update.model';
+
 import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 
 @Injectable({
@@ -9,10 +10,10 @@ import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 })
 export class GlossaryApprovalService {
 formApproval : GlossaryApproval;
-formPosting: GlossaryUpdate;
-listApproval : GlossaryApproval[]=[];
+formPosting: GlossaryApproval;
+listApproval : GlossaryGetApprovalList[]=[];
 
-readonly domain='https://localhost:44368/api';
+readonly domain='https://localhost:5001/api';
 
   constructor(private http:HttpClient ) { }
 
@@ -20,7 +21,7 @@ readonly domain='https://localhost:44368/api';
 uploadList(){
 this.http.get(this.domain + '/GlossaryApprovals')
   .toPromise()
-  .then((res: GlossaryApproval[]) =>{
+  .then((res: GlossaryGetApprovalList[]) =>{
     console.log(res);
     this.listApproval=res;
   }
@@ -38,12 +39,12 @@ this.http.get(this.domain + '/GlossaryApprovals')
   
   postRecordFromUpdate(content: string){
 
-    this.updateApprovalForm(content);
+    this.updatePostingForm(content);
 
-    console.table(this.formApproval);
+    console.table(this.formPosting);
     console.log("Content post: " + content);
 
-  return this.http.post(this.domain+'/GlossaryApprovals', this.formApproval);
+  return this.http.post(this.domain+'/GlossaryApprovals', this.formPosting);
 
   }
 
@@ -68,7 +69,7 @@ this.http.get(this.domain + '/GlossaryApprovals')
 
   putRecord(arr){
 
-    return this.http.put(this.domain+'/GlossaryApprovals/'+ arr.RecId, arr).subscribe();
+    return this.http.put(this.domain +'/GlossaryApprovals/'+ arr.RecId, arr);
     }
   
     updateApprovalForm(arr){
@@ -79,7 +80,7 @@ this.http.get(this.domain + '/GlossaryApprovals')
             AcronymExtension: arr.AcronymExtension,
             Description: arr.AcronymExtension,
             PostedBy: arr.AcronymExtension,
-            PostedDate: arr.AcronymExtension,
+  
             FlagApproved: arr.AcronymExtension,
             FlagRejected: arr.AcronymExtension,
             ApprovedBy: arr.AcronymExtension

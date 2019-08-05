@@ -12,7 +12,7 @@ export class GlossarySearchService {
    formSearch : GlossarySearch;
     listSearch : GlossarySearch[] = [];
     
-    readonly domain='https://localhost:44368/api';
+    readonly domain='https://localhost:5001/api';
     
       constructor(private http:HttpClient) {
 

@@ -12,8 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 export class GlossaryApprovalComponent implements OnInit {
 
   constructor(public service: GlossaryApprovalService,  private toastr: ToastrService) { }
-public   objDatePosted = Date.now();
-public   objDateApproved = Date.now();
 
   ngOnInit() {
     this.service.uploadList();
@@ -28,16 +26,17 @@ this.refreshList();
   let arr = this.service.listApproval[index];
   arr.FlagApproved='X';
   arr.FlagRejected=null;
-  arr.ApprovedBy='izabela.winkler@clariant.com'
-  console.table("updated: " + arr)
+  arr.ApprovedBy='izabela.winkler@clariant.com';
+  console.table("updated: " + arr);
   //send update
   this.service.putRecord(arr).subscribe(
     res=>{
-      this.toastr.success('Acronym successfully added to the database!', 'Acronym Registration')
+      this.toastr.success('Acronym successfully added to the database!', 'Clariant Glossary Communication');
 
     },
     err=>{
       console.log(err);
+      this.toastr.error('Submission failed', 'Clariant Glossary Communication');
     }
   );
  // remove
@@ -61,15 +60,14 @@ const index: number = this.service.listApproval.findIndex(r => r.RecId=== RecId)
   //send update
   this.service.putRecord(arr).subscribe(
     res=>{
-      this.toastr.success('Acronym rejected', 'Acronym Registration')
-
+      this.toastr.success('Acronym was succesfully rejected', 'Clariant Glossary Communication');
     },
     err=>{
       console.log(err);
+      this.toastr.error('Submission failed', 'Clariant Glossary Communication');
     }
   );
  
-  this.toastr.success('Acronym successfully added to the database!', 'Acronym Registration')
  console.table("Accept: " + arr)
  // remove
  if (index != -1) {
