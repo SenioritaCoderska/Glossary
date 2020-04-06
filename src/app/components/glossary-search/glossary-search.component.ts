@@ -31,6 +31,7 @@ public flagSendForApproval: boolean=false;
   }
 
   resetForm(form?:NgForm){
+    console.log("log: " + form);
     if(form!=null)
       form.resetForm(form);
       this.serviceSearch.formSearch = {
@@ -40,13 +41,15 @@ public flagSendForApproval: boolean=false;
         Description: '',
         PostedBy: '',
         PostedDate: ''
+      };
+      this.serviceSearch.listSearch = [];
+        
       }
-    }
 
     getRecord(form:NgForm){ 
+      console.log("logGetsearch: " + form);
       if(form!=null){
-        this.serviceSearch.getSearchedData();
-        
+        this.serviceSearch.getSearchedData();    
       }
       else{
         this.resetForm;
@@ -59,6 +62,7 @@ public flagSendForApproval: boolean=false;
       
       console.log("flag change to true") ;
       this.flagUpdate = true;
+      this.resetForm;
             
       console.log(this.flagUpdate);
     }else{
@@ -77,7 +81,7 @@ public flagSendForApproval: boolean=false;
  
     this.serviceApproval.postRecordFromUpdate(content).subscribe(
     res=>{
-      this.resetForm(form);
+      this.resetForm;
       this.toastr.success('Record successfully submited! Awaiting approval!', 'Clariant Glossary Communication')
       this.flagSendForApproval=true;
     },
@@ -86,5 +90,7 @@ public flagSendForApproval: boolean=false;
       this.flagSendForApproval=false;
       this.toastr.error('Submission failed', 'Clariant Glossary Communication')
     });
+
+    this.resetForm;
   }
 }

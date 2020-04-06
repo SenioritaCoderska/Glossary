@@ -6,6 +6,7 @@ import { GlossaryAddComponent } from './components/glossary-add/glossary-add.com
 import { GlossaryWelcomeComponent } from './components/glossary-welcome/glossary-welcome.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
 const routes: Routes = [
 
   {
@@ -38,3 +39,6 @@ const routes: Routes = [
  exports: [RouterModule]
   })
 export class AppRoutingModule {routes: Routes[] = []; }
+
+
+

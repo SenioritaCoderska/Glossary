@@ -1,1 +1,16 @@
-<p>glossary-permission works!</p>
+<form #formP="ngForm" autocomplete="off" style="font-size: 90%" class="fontGothamBlackRegular">
+    <div class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                      <i class="fas fa-sign-in-alt" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i> 
+              </div>
+          </div>
+          <input name="Email" #Email="ngModel" [(ngModel)]="permService.formSearch.Email"  class="form-control fontGothamBlackRegular" placeholder="Provide your email address" maxlength="250" minlength="20" type="text" required>
+          
+          <button id="btnLogin" class="btn btn-action btn-sm fontGothamBlackRegular"  type="submit" [disabled]="formP.invalid" (click)="onCheck(Email)">
+            <i class="fas fa-sign-in-alt"> </i>&nbsp;&nbsp;Sign in</button>
+      </div> 
+  </div>
+  </form>
+

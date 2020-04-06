@@ -3,7 +3,6 @@ import { GlossaryApproval} from '../models/glossary-approval.model';
 import {GlossaryGetApprovalList} from "../models/glossary-get-approval-list.model"
 import { HttpClient } from '@angular/common/http';
 
-import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 
 @Injectable({
   providedIn: 'root'
@@ -80,7 +79,6 @@ this.http.get(this.domain + '/GlossaryApprovals')
             AcronymExtension: arr.AcronymExtension,
             Description: arr.AcronymExtension,
             PostedBy: arr.AcronymExtension,
-  
             FlagApproved: arr.AcronymExtension,
             FlagRejected: arr.AcronymExtension,
             ApprovedBy: arr.AcronymExtension

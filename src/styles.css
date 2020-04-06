@@ -18,7 +18,11 @@ input.ng-valid{
     opacity:1;
     background-color:rgb(3, 165, 194);
     color: white;
+    margin:  auto;
+    right:200%;
+    top: 200px;
 }
+
 
 /* #toast-container> div.warrning {
     opacity:1;
@@ -37,6 +41,7 @@ input.ng-valid{
     opacity:1;
     background-color: red;
     color: white;
+
 } 
 
 

@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AppRoutingModule } from './app-routing.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,6 @@ import { AppRoutingModule } from './app-routing.module';
     GlossaryWelcomeComponent,
     PageNotFoundComponent,
     
-    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
-
 
   ],
   providers: [GlossaryApprovalService, GlossarySearchService, GlossaryPermissionService],

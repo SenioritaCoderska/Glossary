@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: []
 })
 
+
 export class GlossaryApprovalComponent implements OnInit {
 
   constructor(public service: GlossaryApprovalService,  private toastr: ToastrService) { }
@@ -28,6 +29,7 @@ this.refreshList();
   arr.FlagRejected=null;
   arr.ApprovedBy='izabela.winkler@clariant.com';
   console.table("updated: " + arr);
+
   //send update
   this.service.putRecord(arr).subscribe(
     res=>{

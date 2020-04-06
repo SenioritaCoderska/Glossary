@@ -1,4 +1,6 @@
-export interface GlossaryPermission {
+export class GlossaryPermission {
+
     RecId: number;
-    email: string;
+    Role: string='';
+    Email: string='';
 }

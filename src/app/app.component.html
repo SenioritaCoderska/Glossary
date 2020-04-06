@@ -11,7 +11,15 @@
                 </div>
 </header>
 <hr>
-<div class="container jumbotronHead vertical-center">
+<!-- <div class="container jumbotronHead vertical-center">
+
+     <app-glossary-permission></app-glossary-permission>
+     
+</div>
+<div *ngIf="this.flagLoggedIn"> -->
+
+
+<div class="container jumbotronHead vertical-center" #content>
           <nav class="nav">
             <div class="btn-group m-1 col-sm" role="group" aria-label="First group">
                 <a routerLink="/home"  routerLinkActive="a-"><button #btnSearch class="btn btn-sm  btn-menu fontGothamBlackRegular"><i class="fas fa-home">&nbsp;&nbsp;</i> HOME</button></a></div>
@@ -25,6 +33,7 @@
 <div class="container jumbotron vertical-center">
 <router-outlet></router-outlet>
 </div>
+<!-- </div> -->
 <footer class="container vertical-center">
   <div>
       <p>@Copyright by CLARIANT || In case of any issue please contact: <a href="mailto:dti_ea@clariant.com">dti_ea@clariant.com</a></p>
